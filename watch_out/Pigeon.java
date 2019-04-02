@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Piegeon extends Birds
+public class Pigeon extends Birds
 {
     /**
      * Act - do whatever the Piegeon wants to do. This method is called whenever
