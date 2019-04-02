@@ -34,5 +34,9 @@ public class AirPlane extends Actor
         {
             move(10);
         }  
+        removeTouching(Eagle.class);
+        removeTouching(Pigeon.class);
+        removeTouching(Stork.class);
+        removeTouching(SupplyDrop.class);        
     }    
 }
