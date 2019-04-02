@@ -20,6 +20,10 @@ public class Sky extends World
     
     private SupplyDrop Drop;
     
+    private int secondsAlive = 0;
+    
+    private int frames;
+    
     /**
      * Constructor for objects of class HealthyWorld.
      * 
@@ -41,5 +45,26 @@ public class Sky extends World
         Drop = new SupplyDrop();
         this.addObject(Drop,0,200);
     }
+        /**
+     * Act - do whatever the HealthyWorld needs to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act() 
+    {
+        // Every 60 frames, update the time
+        if ((frames % 60) == 0)
+        {
+            // Show how many seconds have passed
+            String timeElapsed = Integer.toString(frames / 60);
 
+            // Reduce seconds left by one
+            secondsAlive = secondsAlive + 1;
+
+            // Display seconds left
+            String counting = Integer.toString(secondsAlive);
+            showText(counting, 50, 50);
+
+        }
+        frames = frames + 1;
+    }
 }

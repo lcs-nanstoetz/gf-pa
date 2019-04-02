@@ -14,6 +14,6 @@ public class Stork extends Birds
      */
     public void act() 
     {
-    
+
     }    
 }

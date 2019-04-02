@@ -14,8 +14,6 @@ public class Birds extends Actor
      */
     public void act() 
     {
-        
-        turnTowards(800,getY());
-        move(5);
+
     }    
 }

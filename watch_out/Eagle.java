@@ -14,6 +14,6 @@ public class Eagle extends Birds
      */
     public void act() 
     {
-        // Add your action code here.
+
     }    
 }
