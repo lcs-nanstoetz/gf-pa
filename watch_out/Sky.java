@@ -16,8 +16,6 @@ public class Sky extends World
     
     private Stork TheStork;
     
-    private int healthValue = 5;
-    
     private SupplyDrop Drop;
     
     private int secondsAlive = 0;
@@ -66,5 +64,6 @@ public class Sky extends World
 
         }
         frames = frames + 1;
+
     }
 }

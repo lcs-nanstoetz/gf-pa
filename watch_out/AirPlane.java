@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class AirPlane extends Actor
 {
-    
+  private int healthValue = 5;
     /**
      * Constructor
      * 
@@ -16,7 +16,7 @@ public class AirPlane extends Actor
      */
     public AirPlane()
     {
-
+        healthValue = 5;
         turn(90);
     }
     /**
@@ -25,18 +25,40 @@ public class AirPlane extends Actor
      */
     public void act() 
     {
-              if (Greenfoot.isKeyDown("up") == true)
+        if (Greenfoot.isKeyDown("up") == true)
         {
-            
             move(-10);
         }
         if (Greenfoot.isKeyDown("down") == true)
         {
             move(10);
         }  
-        removeTouching(Eagle.class);
-        removeTouching(Pigeon.class);
-        removeTouching(Stork.class);
-        removeTouching(SupplyDrop.class);        
+        if (isTouching(Eagle.class)== true)
+        {
+            healthValue = healthValue - 1;
+            removeTouching(Eagle.class);
+
+        }   
+        if (isTouching(Pigeon.class)== true)
+        {
+            healthValue = healthValue - 1;
+            removeTouching(Pigeon.class);
+
+        }   
+        if (isTouching(Stork.class)== true)
+        {
+            healthValue = healthValue - 1;
+            removeTouching(Stork.class);
+
+        }   
+        if (isTouching(SupplyDrop.class)== true)
+        {
+            healthValue = healthValue - 1;
+            removeTouching(SupplyDrop.class);
+
+        }           
+        String health = Integer.toString(healthValue);
+        showText(health, 50, 500);
+
     }    
 }
