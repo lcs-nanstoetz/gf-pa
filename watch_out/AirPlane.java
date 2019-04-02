@@ -28,11 +28,11 @@ public class AirPlane extends Actor
               if (Greenfoot.isKeyDown("up") == true)
         {
             
-            move(10);
+            move(-10);
         }
         if (Greenfoot.isKeyDown("down") == true)
         {
-            move(-10);
+            move(10);
         }  
     }    
 }

@@ -32,7 +32,6 @@ public class Sky extends World
         // Create the plane pigeon stork and eagle class
         thePlane = new AirPlane();
         this.addObject(thePlane, 0, 200);
-
         ThePigeon = new Pigeon();
         this.addObject(ThePigeon,800,Greenfoot.getRandomNumber(400));
         TheStork = new Stork();
