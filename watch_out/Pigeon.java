@@ -14,6 +14,6 @@ public class Pigeon extends Birds
      */
     public void act() 
     {
-
+        move(-5);
     }    
 }

@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class AirPlane extends Actor
 {
-  private int healthValue = 5;
+    private int healthValue;
     /**
      * Constructor
      * 
@@ -19,6 +19,7 @@ public class AirPlane extends Actor
         healthValue = 5;
         turn(90);
     }
+
     /**
      * Act - do whatever the AirPlane wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -37,28 +38,29 @@ public class AirPlane extends Actor
         {
             healthValue = healthValue - 1;
             removeTouching(Eagle.class);
-
         }   
         if (isTouching(Pigeon.class)== true)
         {
             healthValue = healthValue - 1;
             removeTouching(Pigeon.class);
-
         }   
         if (isTouching(Stork.class)== true)
         {
             healthValue = healthValue - 1;
             removeTouching(Stork.class);
-
         }   
         if (isTouching(SupplyDrop.class)== true)
         {
-            healthValue = healthValue - 1;
+            healthValue = healthValue + 1;
             removeTouching(SupplyDrop.class);
+        } 
+    }
 
-        }           
-        String health = Integer.toString(healthValue);
-        showText(health, 50, 500);
-
+    public void changeHealthValueBy(int thisMuch)
+    {
+        healthValue += thisMuch;        
+        String healthUpdate = Integer.toString(healthValue);
+        getWorld().showText(healthUpdate, 100, 50);
     }    
 }
+

@@ -11,17 +11,18 @@ public class Sky extends World
     private AirPlane thePlane;
 
     private Eagle Theeagle;
-    
+
     private Pigeon ThePigeon;
-    
+
     private Stork TheStork;
-    
+
     private SupplyDrop Drop;
-    
+
     private int secondsAlive = 0;
-    
+
     private int frames;
-    
+
+    private int healthValue = 5;
     /**
      * Constructor for objects of class HealthyWorld.
      * 
@@ -41,9 +42,10 @@ public class Sky extends World
         Theeagle = new Eagle();
         this.addObject(Theeagle,800,Greenfoot.getRandomNumber(400));
         Drop = new SupplyDrop();
-        this.addObject(Drop,0,200);
+        this.addObject(Drop,0,0);
     }
-        /**
+
+    /**
      * Act - do whatever the HealthyWorld needs to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -65,5 +67,11 @@ public class Sky extends World
         }
         frames = frames + 1;
 
+        String healthyLife = Integer.toString(healthValue);
+        showText(healthyLife, 100, 50);
+        
+        addObject(ThePigeon,800,Greenfoot.getRandomNumber(400));
+        addObject(TheStork,800,Greenfoot.getRandomNumber(400));
+        addObject(Theeagle,800,Greenfoot.getRandomNumber(400));
     }
 }

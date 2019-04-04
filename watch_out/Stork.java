@@ -14,6 +14,10 @@ public class Stork extends Birds
      */
     public void act() 
     {
-
+        move(-5);
+        if (isTouching(AirPlane.class) == true)
+        {
+            //setImage(_filename_);
+        }
     }    
 }
