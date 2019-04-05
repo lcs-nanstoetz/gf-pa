@@ -55,6 +55,10 @@ public class AirPlane extends Actor
             changeHealthValueBy(1);
             removeTouching(SupplyDrop.class);
         } 
+        if ((healthValue) == 0) 
+        {
+            Greenfoot.stop();
+        }
     }
 
     private void changeHealthValueBy(int thisMuch)

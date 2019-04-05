@@ -41,7 +41,7 @@ public class Sky extends World
         Theeagle = new Eagle();
         this.addObject(Theeagle,800,Greenfoot.getRandomNumber(400));
         Drop = new SupplyDrop();
-        this.addObject(Drop,0,0);
+        this.addObject(Drop,100,0);
         
         // Show the initial health
         showText("5", 100, 50);
@@ -69,7 +69,7 @@ public class Sky extends World
         }
         frames = frames + 1;
 
-        
+        addObject(Drop,100,0);       
         addObject(ThePigeon,800,Greenfoot.getRandomNumber(400));
         addObject(TheStork,800,Greenfoot.getRandomNumber(400));
         addObject(Theeagle,800,Greenfoot.getRandomNumber(400));
