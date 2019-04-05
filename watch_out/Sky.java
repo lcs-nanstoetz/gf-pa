@@ -21,6 +21,8 @@ public class Sky extends World
     private int secondsAlive = 0;
 
     private int frames;
+    
+    private Border border;
 
     /**
      * Constructor for objects of class HealthyWorld.
@@ -42,7 +44,8 @@ public class Sky extends World
         this.addObject(Theeagle,800,Greenfoot.getRandomNumber(400));
         Drop = new SupplyDrop();
         this.addObject(Drop,100,0);
-        
+        border = new Border();
+        this.addObject(border,-00,0);
         // Show the initial health
         showText("5", 100, 50);
     }
