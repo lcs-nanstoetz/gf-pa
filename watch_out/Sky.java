@@ -22,7 +22,6 @@ public class Sky extends World
 
     private int frames;
 
-    private int healthValue = 5;
     /**
      * Constructor for objects of class HealthyWorld.
      * 
@@ -34,7 +33,7 @@ public class Sky extends World
 
         // Create the plane pigeon stork and eagle class
         thePlane = new AirPlane();
-        this.addObject(thePlane, 0, 200);
+        this.addObject(thePlane, 100, 200);
         ThePigeon = new Pigeon();
         this.addObject(ThePigeon,800,Greenfoot.getRandomNumber(400));
         TheStork = new Stork();
@@ -43,6 +42,9 @@ public class Sky extends World
         this.addObject(Theeagle,800,Greenfoot.getRandomNumber(400));
         Drop = new SupplyDrop();
         this.addObject(Drop,0,0);
+        
+        // Show the initial health
+        showText("5", 100, 50);
     }
 
     /**
@@ -67,8 +69,6 @@ public class Sky extends World
         }
         frames = frames + 1;
 
-        String healthyLife = Integer.toString(healthValue);
-        showText(healthyLife, 100, 50);
         
         addObject(ThePigeon,800,Greenfoot.getRandomNumber(400));
         addObject(TheStork,800,Greenfoot.getRandomNumber(400));

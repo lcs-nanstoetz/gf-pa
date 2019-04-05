@@ -14,7 +14,7 @@ public class Eagle extends Birds
      */
     public void act() 
     {
-        move(-5);
+        move(-10);
         
     }    
 }
