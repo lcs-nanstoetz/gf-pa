@@ -71,7 +71,7 @@ public class Sky extends World
 
         }
         
-        if (frames % 10000 == 0)
+        if (frames % 1800 == 0)
         {
             addObject(new SupplyDrop(),100,0);  
         }

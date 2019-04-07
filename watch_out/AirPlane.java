@@ -1,3 +1,4 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -26,7 +27,7 @@ public class AirPlane extends Actor
      */
     public void act() 
     {
-        
+
         if (Greenfoot.isKeyDown("up") == true)
         {
             move(-10);
@@ -55,10 +56,7 @@ public class AirPlane extends Actor
             changeHealthValueBy(1);
             removeTouching(SupplyDrop.class);
         } 
-        if ((healthValue) == 0) 
-        {
-            Greenfoot.stop();
-        }
+        checkForRemoval();
     }
 
     private void changeHealthValueBy(int thisMuch)
@@ -66,8 +64,21 @@ public class AirPlane extends Actor
         healthValue += thisMuch;        
         String healthUpdate = Integer.toString(healthValue);
         getWorld().showText(healthUpdate, 100, 50);
-    }    
-    
+    } 
 
+    private void checkForRemoval()
+    {
+        if (healthValue < 1)
+        {
+            Sky world = (Sky) getWorld();
+            Explosion newExplosion = new Explosion();
+            getWorld().addObject(newExplosion, getX(), getY());
+            
+            getWorld().showText("GAME OVER", 400,200);
+            getWorld().removeObject(this);
+            Greenfoot.stop();
+            
+        }   
+    }
 }
 
