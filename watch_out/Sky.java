@@ -20,8 +20,8 @@ public class Sky extends World
 
     private int secondsAlive = 0;
 
-    private int frames;
-    
+    private int frames = 0;
+
     private Border border;
 
     /**
@@ -70,11 +70,25 @@ public class Sky extends World
             showText(counting, 50, 50);
 
         }
-        frames = frames + 1;
+        
+        if (frames % 10000 == 0)
+        {
+            addObject(new SupplyDrop(),100,0);  
+        }
+        if (frames % 30 == 0)
+        {
+            addObject(new Pigeon(),800,Greenfoot.getRandomNumber(400));
+        }   
 
-        addObject(Drop,100,0);       
-        addObject(ThePigeon,800,Greenfoot.getRandomNumber(400));
-        addObject(TheStork,800,Greenfoot.getRandomNumber(400));
-        addObject(Theeagle,800,Greenfoot.getRandomNumber(400));
+        if ((frames % 90) == 0)
+        {
+         addObject(new Stork(),800,Greenfoot.getRandomNumber(400));
+
+        }
+        if ((frames % 120) == 0)
+        {
+            addObject(new Eagle(),800,Greenfoot.getRandomNumber(400));
+        }
+        frames = frames + 1;
     }
 }
