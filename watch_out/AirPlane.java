@@ -10,6 +10,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class AirPlane extends Actor
 {
     private int healthValue;
+    private int frames;
     /**
      * Constructor
      * 
@@ -57,6 +58,7 @@ public class AirPlane extends Actor
             removeTouching(SupplyDrop.class);
         } 
         checkForRemoval();
+        frames ++;
     }
 
     private void changeHealthValueBy(int thisMuch)
@@ -73,7 +75,9 @@ public class AirPlane extends Actor
             Sky world = (Sky) getWorld();
             Explosion newExplosion = new Explosion();
             getWorld().addObject(newExplosion, getX(), getY());
-            
+            String a = Integer.toString(frames / 60);
+            getWorld().showText("Your time is:",400, 220);
+            getWorld().showText(a,480, 220);
             getWorld().showText("GAME OVER", 400,200);
             getWorld().removeObject(this);
             Greenfoot.stop();
